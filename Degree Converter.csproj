@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{497C2875-3CE8-4F6F-8604-5D5AC458B39F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>WindowsApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>Degree_Converter</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Backup\DegreeConverter.Engine\DegreeConverter.Engine.csproj" />
+    <Content Include="Backup\DegreeConverter.sln" />
+    <Content Include="Backup\DegreeConverter.WinView\DegreeConverter.WinView.csproj" />
+    <Content Include="DegreeConverter.Engine\bin\Debug\DegreeConverter.Engine.dll" />
+    <Content Include="DegreeConverter.Engine\bin\Debug\DegreeConverter.Engine.pdb" />
+    <Content Include="DegreeConverter.Engine\DegreeConverter.Engine.csproj" />
+    <Content Include="DegreeConverter.Engine\obj\Debug\DegreeConverter.Engine.csproj.FileListAbsolute.txt" />
+    <Content Include="DegreeConverter.Engine\obj\Debug\DegreeConverter.Engine.dll" />
+    <Content Include="DegreeConverter.Engine\obj\Debug\DegreeConverter.Engine.pdb" />
+    <Content Include="DegreeConverter.WinView\bin\Debug\DegreeConverter.Engine.dll" />
+    <Content Include="DegreeConverter.WinView\bin\Debug\DegreeConverter.Engine.pdb" />
+    <Content Include="DegreeConverter.WinView\bin\Debug\DegreeConverter.WinView.exe" />
+    <Content Include="DegreeConverter.WinView\bin\Debug\DegreeConverter.WinView.pdb" />
+    <Content Include="DegreeConverter.WinView\bin\Debug\DegreeConverter.WinView.vshost.exe" />
+    <Content Include="DegreeConverter.WinView\DegreeConverter.WinView.csproj" />
+    <Content Include="DegreeConverter.WinView\obj\Debug\DegreeConverter.WinView.csproj.FileListAbsolute.txt" />
+    <Content Include="DegreeConverter.WinView\obj\Debug\DegreeConverter.WinView.exe" />
+    <Content Include="DegreeConverter.WinView\obj\Debug\DegreeConverter.WinView.pdb" />
+    <Content Include="DegreeConverter.WinView\obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
+    <Content Include="ReadMe.txt" />
+    <Content Include="UpgradeLog.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Backup\DegreeConverter.Engine\IView.cs" />
+    <Compile Include="Backup\DegreeConverter.Engine\Model.cs" />
+    <Compile Include="Backup\DegreeConverter.Engine\Presenter.cs" />
+    <Compile Include="Backup\DegreeConverter.Engine\Properties\AssemblyInfo.cs" />
+    <Compile Include="Backup\DegreeConverter.WinView\FormView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup\DegreeConverter.WinView\FormView.Designer.cs">
+      <DependentUpon>FormView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backup\DegreeConverter.WinView\Program.cs" />
+    <Compile Include="Backup\DegreeConverter.WinView\Properties\AssemblyInfo.cs" />
+    <Compile Include="Backup\DegreeConverter.WinView\Properties\Resources.Designer.cs" />
+    <Compile Include="Backup\DegreeConverter.WinView\Properties\Settings.Designer.cs" />
+    <Compile Include="DegreeConverter.Engine\IView.cs" />
+    <Compile Include="DegreeConverter.Engine\Model.cs" />
+    <Compile Include="DegreeConverter.Engine\Presenter.cs" />
+    <Compile Include="DegreeConverter.Engine\Properties\AssemblyInfo.cs" />
+    <Compile Include="DegreeConverter.WinView\FormView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DegreeConverter.WinView\FormView.Designer.cs">
+      <DependentUpon>FormView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DegreeConverter.WinView\Program.cs" />
+    <Compile Include="DegreeConverter.WinView\Properties\AssemblyInfo.cs" />
+    <Compile Include="DegreeConverter.WinView\Properties\Resources.Designer.cs" />
+    <Compile Include="DegreeConverter.WinView\Properties\Settings.Designer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Backup\DegreeConverter.WinView\FormView.resx">
+      <DependentUpon>FormView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup\DegreeConverter.WinView\Properties\Resources.resx" />
+    <EmbeddedResource Include="DegreeConverter.WinView\FormView.resx">
+      <DependentUpon>FormView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DegreeConverter.WinView\obj\Debug\DegreeConverter.WinView.FormView.resources" />
+    <EmbeddedResource Include="DegreeConverter.WinView\obj\Debug\DegreeConverter.WinView.Properties.Resources.resources" />
+    <EmbeddedResource Include="DegreeConverter.WinView\Properties\Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Backup\DegreeConverter.WinView\Properties\Settings.settings" />
+    <None Include="DegreeConverter.Engine\obj\Debug\DegreeConverter.Engine.csprojResolveAssemblyReference.cache" />
+    <None Include="DegreeConverter.Engine\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="DegreeConverter.WinView\bin\Debug\DegreeConverter.WinView.vshost.exe.manifest" />
+    <None Include="DegreeConverter.WinView\obj\Debug\DegreeConverter.WinView.csproj.GenerateResource.Cache" />
+    <None Include="DegreeConverter.WinView\obj\Debug\DegreeConverter.WinView.csprojResolveAssemblyReference.cache" />
+    <None Include="DegreeConverter.WinView\obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="DegreeConverter.WinView\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="DegreeConverter.WinView\Properties\Settings.settings" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include=".vs\" />
+    <Folder Include="DegreeConverter.Engine\obj\Debug\TempPE\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>
