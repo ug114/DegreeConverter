@@ -42,42 +42,99 @@ namespace DegreeConverter.Engine
 
         private void SetCelsiusFahrenheit(object sender, EventArgs e)
         {
-            model.valueCelsiusFahrenheit = view.InputDegree;
+            try
+            {
+                model.valueCelsiusFahrenheit = view.InputDegree;
+            }
+            catch (Exception exception)
+            {
+
+            }
         }
 
         private void SetCelsiusKelvin(object sender, EventArgs e)
         {
-            model.valueCelsiusKelvin = view.InputDegree;
+            try
+            {
+                model.valueCelsiusKelvin = view.InputDegree;
+            }
+            catch (Exception exception)
+            {
+
+            }
+
         }
 
         private void SetFahrenheitCelsius(object sender, EventArgs e)
 		{
-			model.valueFahrenheitCelsius = view.InputDegree;
+			try
+            {
+                model.valueFahrenheitCelsius = view.InputDegree;
+            }
+            catch (Exception exception)
+            {
+
+            }
         }
 
         private void SetFahrenheitFahrenheit(object sender, EventArgs e)
         {
-            model.valueFahrenheitFahrenheit = view.InputDegree;
+            try
+            {
+                model.valueFahrenheitFahrenheit = view.InputDegree;
+            }
+            catch (Exception exception)
+            {
+
+            }
         }
 
         private void SetFahrenheitKelvin(object sender, EventArgs e)
         {
-            model.valueFahrenheitKelvin = view.InputDegree;
+            try
+            {
+                model.valueFahrenheitKelvin = view.InputDegree;
+            }
+            catch (Exception exception)
+            {
+
+            }
         }
 
         private void SetKelvinCelsius(object sender, EventArgs e)
         {
-            model.valueKelvinCelsius = view.InputDegree;
+            try
+            {
+                model.valueKelvinCelsius = view.InputDegree;
+            }
+            catch (Exception exception)
+            {
+
+            }
         }
 
         private void SetKelvinFahrenheit(object sender, EventArgs e)
         {
-            model.valueKelvinFahrenheit = view.InputDegree;
+            try
+            {
+                model.valueKelvinFahrenheit = view.InputDegree;
+            }
+            catch (Exception exception)
+            {
+
+            }
         }
 
         private void SetKelvinKelvin(object sender, EventArgs e)
         {
-            model.valueKelvinKelvin = view.InputDegree;
+            try
+            {
+                model.valueKelvinKelvin = view.InputDegree;
+            }
+            catch (Exception exception)
+            {
+
+            }
         }
     }
 }
