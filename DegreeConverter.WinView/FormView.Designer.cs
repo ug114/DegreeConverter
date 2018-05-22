@@ -126,6 +126,7 @@ namespace DegreeConverter.WinView
             this.radioButtonFromCelsius.TabStop = true;
             this.radioButtonFromCelsius.Text = "Цельсию";
             this.radioButtonFromCelsius.UseVisualStyleBackColor = true;
+            this.radioButtonFromCelsius.Checked = true;
             // 
             // labelFrom
             // 
@@ -191,6 +192,7 @@ namespace DegreeConverter.WinView
             this.radioButtonToCelsius.TabStop = true;
             this.radioButtonToCelsius.Text = "Цельсию";
             this.radioButtonToCelsius.UseVisualStyleBackColor = true;
+            this.radioButtonToCelsius.Checked = true;
             // 
             // buttonOK
             // 

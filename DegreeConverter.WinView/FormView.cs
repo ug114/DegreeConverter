@@ -28,8 +28,9 @@ namespace DegreeConverter.WinView
                 
                 for (int i = 0; i < text.Length; i++)
                 {
-                    if (char.IsLetter(text[i]))
+                    if (!char.IsDigit(text[i]) && text[i] != ',')
                     {
+                        MessageBox.Show("¬ведите число.");
                         throw new ArgumentException();
                     }
                 }           
@@ -39,59 +40,12 @@ namespace DegreeConverter.WinView
 		}
 
         public event EventHandler<EventArgs> OK;
-        //public event EventHandler<EventArgs> FromFahrenheitToCelsius;
-        //public event EventHandler<EventArgs> FromCelsiusToCelsius;
-        //public event EventHandler<EventArgs> FromKelvinToCelsius;
-        //public event EventHandler<EventArgs> FromFahrenheitToFahrenheit;
-        //public event EventHandler<EventArgs> FromCelsiusToKelvin;
-        //public event EventHandler<EventArgs> FromCelsiusToFahrenheit;
-        //public event EventHandler<EventArgs> FromKelvinToKelvin;
-        //public event EventHandler<EventArgs> FromKelvinToFahrenheit;
-        //public event EventHandler<EventArgs> FromFahrenheitToKelvin;
-
         public event EventHandler<EventArgs> ToCelsius;
         public event EventHandler<EventArgs> ToKelvin;
         public event EventHandler<EventArgs> ToFahrenheit;
         
         private void ChooseFrom(object sender, EventArgs e)
         {
-            //if (radioButtonFromCelsius.Checked && radioButtonToCelsius.Checked)
-            //{
-            //    FromCelsiusToCelsius(this, EventArgs.Empty);
-            //}
-            //else if (radioButtonFromFahrenheit.Checked && radioButtonToCelsius.Checked)
-            //{
-            //    FromFahrenheitToCelsius(this, EventArgs.Empty);
-            //}
-            //else if (radioButtonFromKelvin.Checked && radioButtonToCelsius.Checked)
-            //{
-            //    FromKelvinToCelsius(this, EventArgs.Empty);
-            //}
-            //else if (radioButtonFromCelsius.Checked && radioButtonToFahrenheit.Checked)
-            //{
-            //    FromCelsiusToFahrenheit(this, EventArgs.Empty);
-            //}
-            //else if(radioButtonFromCelsius.Checked && radioButtonToKelvin.Checked)
-            //{
-            //    FromCelsiusToKelvin(this, EventArgs.Empty);
-            //}
-            //else if (radioButtonFromFahrenheit.Checked && radioButtonToFahrenheit.Checked)
-            //{
-            //    FromFahrenheitToFahrenheit(this, EventArgs.Empty);
-            //}
-            //else if(radioButtonFromFahrenheit.Checked && radioButtonToKelvin.Checked)
-            //{
-            //    FromFahrenheitToKelvin(this, EventArgs.Empty);
-            //}
-            //else if(radioButtonFromKelvin.Checked && radioButtonToFahrenheit.Checked)
-            //{
-            //    FromKelvinToFahrenheit(this, EventArgs.Empty);
-            //}
-            //else if (radioButtonFromKelvin.Checked && radioButtonToKelvin.Checked)
-            //{
-            //    FromKelvinToKelvin(this, EventArgs.Empty);
-            //}
-
             if (radioButtonFromCelsius.Checked)
             {
                 IsFromCelsius = true;
@@ -104,7 +58,7 @@ namespace DegreeConverter.WinView
                 IsFromCelsius = false;
                 IsFromKelvin = false;
             }
-            else if (radioButtonFromKelvin.Checked)
+            else 
             {
                 IsFromKelvin = true;
                 IsFromCelsius = false;
@@ -119,7 +73,7 @@ namespace DegreeConverter.WinView
             {
                 ToKelvin(this, EventArgs.Empty);
             }
-            else if (radioButtonToFahrenheit.Checked)
+            else
             {
                 ToFahrenheit(this, EventArgs.Empty);
             }
