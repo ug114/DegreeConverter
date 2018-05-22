@@ -6,6 +6,10 @@ namespace DegreeConverter.WinView
 {
 	public partial class FormView : Form, IView
 	{
+        public bool IsFromCelsius { get; set; }
+        public bool IsFromKelvin { get; set; }
+        public bool IsFromFahrenheit { get; set; }
+
 		public FormView()
 		{
 			InitializeComponent();
@@ -35,53 +39,89 @@ namespace DegreeConverter.WinView
 		}
 
         public event EventHandler<EventArgs> OK;
-        public event EventHandler<EventArgs> FromFahrenheitToCelsius;
-        public event EventHandler<EventArgs> FromCelsiusToCelsius;
-        public event EventHandler<EventArgs> FromKelvinToCelsius;
-        public event EventHandler<EventArgs> FromFahrenheitToFahrenheit;
-        public event EventHandler<EventArgs> FromCelsiusToKelvin;
-        public event EventHandler<EventArgs> FromCelsiusToFahrenheit;
-        public event EventHandler<EventArgs> FromKelvinToKelvin;
-        public event EventHandler<EventArgs> FromKelvinToFahrenheit;
-        public event EventHandler<EventArgs> FromFahrenheitToKelvin;
+        //public event EventHandler<EventArgs> FromFahrenheitToCelsius;
+        //public event EventHandler<EventArgs> FromCelsiusToCelsius;
+        //public event EventHandler<EventArgs> FromKelvinToCelsius;
+        //public event EventHandler<EventArgs> FromFahrenheitToFahrenheit;
+        //public event EventHandler<EventArgs> FromCelsiusToKelvin;
+        //public event EventHandler<EventArgs> FromCelsiusToFahrenheit;
+        //public event EventHandler<EventArgs> FromKelvinToKelvin;
+        //public event EventHandler<EventArgs> FromKelvinToFahrenheit;
+        //public event EventHandler<EventArgs> FromFahrenheitToKelvin;
 
+        public event EventHandler<EventArgs> ToCelsius;
+        public event EventHandler<EventArgs> ToKelvin;
+        public event EventHandler<EventArgs> ToFahrenheit;
+        
         private void ChooseFrom(object sender, EventArgs e)
         {
-            if (radioButtonFromCelsius.Checked && radioButtonToCelsius.Checked)
+            //if (radioButtonFromCelsius.Checked && radioButtonToCelsius.Checked)
+            //{
+            //    FromCelsiusToCelsius(this, EventArgs.Empty);
+            //}
+            //else if (radioButtonFromFahrenheit.Checked && radioButtonToCelsius.Checked)
+            //{
+            //    FromFahrenheitToCelsius(this, EventArgs.Empty);
+            //}
+            //else if (radioButtonFromKelvin.Checked && radioButtonToCelsius.Checked)
+            //{
+            //    FromKelvinToCelsius(this, EventArgs.Empty);
+            //}
+            //else if (radioButtonFromCelsius.Checked && radioButtonToFahrenheit.Checked)
+            //{
+            //    FromCelsiusToFahrenheit(this, EventArgs.Empty);
+            //}
+            //else if(radioButtonFromCelsius.Checked && radioButtonToKelvin.Checked)
+            //{
+            //    FromCelsiusToKelvin(this, EventArgs.Empty);
+            //}
+            //else if (radioButtonFromFahrenheit.Checked && radioButtonToFahrenheit.Checked)
+            //{
+            //    FromFahrenheitToFahrenheit(this, EventArgs.Empty);
+            //}
+            //else if(radioButtonFromFahrenheit.Checked && radioButtonToKelvin.Checked)
+            //{
+            //    FromFahrenheitToKelvin(this, EventArgs.Empty);
+            //}
+            //else if(radioButtonFromKelvin.Checked && radioButtonToFahrenheit.Checked)
+            //{
+            //    FromKelvinToFahrenheit(this, EventArgs.Empty);
+            //}
+            //else if (radioButtonFromKelvin.Checked && radioButtonToKelvin.Checked)
+            //{
+            //    FromKelvinToKelvin(this, EventArgs.Empty);
+            //}
+
+            if (radioButtonFromCelsius.Checked)
             {
-                FromCelsiusToCelsius(this, EventArgs.Empty);
+                IsFromCelsius = true;
+                IsFromKelvin = false;
+                IsFromFahrenheit = false;
             }
-            else if (radioButtonFromFahrenheit.Checked && radioButtonToCelsius.Checked)
+            else if (radioButtonFromFahrenheit.Checked)
             {
-                FromFahrenheitToCelsius(this, EventArgs.Empty);
+                IsFromFahrenheit = true;
+                IsFromCelsius = false;
+                IsFromKelvin = false;
             }
-            else if (radioButtonFromKelvin.Checked && radioButtonToCelsius.Checked)
+            else if (radioButtonFromKelvin.Checked)
             {
-                FromKelvinToCelsius(this, EventArgs.Empty);
+                IsFromKelvin = true;
+                IsFromCelsius = false;
+                IsFromFahrenheit = false;
             }
-            else if (radioButtonFromCelsius.Checked && radioButtonToFahrenheit.Checked)
+
+            if (radioButtonToCelsius.Checked)
             {
-                FromCelsiusToFahrenheit(this, EventArgs.Empty);
+                ToCelsius(this, EventArgs.Empty);
             }
-            else if(radioButtonFromCelsius.Checked && radioButtonToKelvin.Checked)
+            else if (radioButtonToKelvin.Checked)
             {
-                FromCelsiusToKelvin(this, EventArgs.Empty);
+                ToKelvin(this, EventArgs.Empty);
             }
-            else if (radioButtonFromFahrenheit.Checked && radioButtonToFahrenheit.Checked)
+            else if (radioButtonToFahrenheit.Checked)
             {
-                FromFahrenheitToFahrenheit(this, EventArgs.Empty);
-            }
-            else if(radioButtonFromFahrenheit.Checked && radioButtonToKelvin.Checked)
-            {
-                FromFahrenheitToKelvin(this, EventArgs.Empty);
-            }
-            else if(radioButtonFromKelvin.Checked && radioButtonToFahrenheit.Checked)
-            {
-                FromKelvinToFahrenheit(this, EventArgs.Empty);
-            }
-            else if (radioButtonFromKelvin.Checked && radioButtonToKelvin.Checked)
-            {
-                FromKelvinToKelvin(this, EventArgs.Empty);
+                ToFahrenheit(this, EventArgs.Empty);
             }
         }
 

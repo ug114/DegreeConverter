@@ -4,76 +4,104 @@ namespace DegreeConverter.Engine
 	{
 		public double outputValue;
 		
-        public double valueCelsiusCelsius
+  //      public double ValueCelsiusCelsius
+  //      {
+  //          get { return outputValue; }
+  //          set { outputValue = value; }
+  //      }
+
+		//public double ValueCelsiusFahrenheit
+		//{
+		//	get { return outputValue; }
+		//	set 
+		//	{ 
+		//		outputValue = value * 9 / 5 + 32; 
+		//	}
+		//}
+
+		//public double ValueCelsiusKelvin
+		//{
+		//	get { return outputValue; }
+		//	set 
+		//	{ 
+		//		outputValue = value + 273.15;
+		//	}
+		//}
+
+  //      public double ValueKelvinCelsius
+  //      {
+  //          get { return outputValue; }
+  //          set
+  //          {
+  //              outputValue = value - 273.15;
+  //          }
+  //      }
+
+  //      public double ValueKelvinFahrenheit
+  //      {
+  //          get { return outputValue; }
+  //          set
+  //          {
+  //              outputValue = 9 * (value - 273.15) / 5 + 32;
+  //          }
+  //      }
+
+  //      public double ValueKelvinKelvin
+  //      {
+  //          get { return outputValue; }
+  //          set { outputValue = value;  }
+  //      }
+
+  //      public double ValueFahrenheitKelvin
+  //      {
+  //          get { return outputValue; }
+  //          set
+  //          {
+  //              outputValue = 5 * (value - 32) / 9 + 273.15;
+  //          }
+  //      }
+
+  //      public double ValueFahrenheitFahrenheit
+  //      {
+  //          get { return outputValue; }
+  //          set { outputValue = value; }
+  //      }
+
+  //      public double ValueFahrenheitCelsius
+  //      {
+  //          get { return outputValue; }
+  //          set
+  //          {
+  //              outputValue = 5 * (value - 32) / 9;
+  //          }
+  //      }
+
+        public double ToCelsius(bool isInCelsius, bool isInKelvin, bool isInFahrenheit, double inputDegree)
         {
-            get { return outputValue; }
-            set { outputValue = value; }
-        }
-
-		public double valueCelsiusFahrenheit
-		{
-			get { return outputValue; }
-			set 
-			{ 
-				outputValue = value * 9 / 5 + 32; 
-			}
-		}
-
-		public double valueCelsiusKelvin
-		{
-			get { return outputValue; }
-			set 
-			{ 
-				outputValue = value + 273.15;
-			}
-		}
-
-        public double valueKelvinCelsius
-        {
-            get { return outputValue; }
-            set
+            if (isInFahrenheit)
             {
-                outputValue = value - 273.15;
+                return 5 * (inputDegree - 32) / 9;
+            }
+            else if (isInKelvin)
+            {
+                return inputDegree - 273.15;
+            }
+            else
+            {
+                return inputDegree;
             }
         }
 
-        public double valueKelvinFahrenheit
+        public double ToKelvin(bool isInCelsius, bool isInKelvin, bool isInFahrenheit, double inputDegree)
         {
-            get { return outputValue; }
-            set
-            {
-                outputValue = 9 * (value - 273.15) / 5 + 32;
-            }
+            double degreeInCelsius = ToCelsius(isInCelsius, isInKelvin, isInFahrenheit, inputDegree);
+            return degreeInCelsius + 273.15;
         }
 
-        public double valueKelvinKelvin
+        public double ToFahrenheit(bool isInCelsius, bool isInKelvin, bool isInFahrenheit, double inputDegree)
         {
-            get { return outputValue; }
-            set { outputValue = value;  }
-        }
-
-        public double valueFahrenheitKelvin
-        {
-            get { return outputValue; }
-            set
-            {
-                outputValue = 5 * (value - 32) / 9 + 273.15;
-            }
-        }
-
-        public double valueFahrenheitFahrenheit
-        {
-            get { return outputValue; }
-            set { outputValue = value; }
-        }
-
-        public double valueFahrenheitCelsius
-        {
-            get { return outputValue; }
-            set
-            {
-                outputValue = 5 * (value - 32) / 9;
-            }
+            double degreeInCelsius = ToCelsius(isInCelsius, isInKelvin, isInFahrenheit, inputDegree);
+            return degreeInCelsius * 9 / 5 + 32;
         }
     }
 }
