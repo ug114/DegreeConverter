@@ -40,7 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Celsius.cs" />
+    <Compile Include="Fahrenheit.cs" />
+    <Compile Include="IScale.cs" />
     <Compile Include="IView.cs" />
+    <Compile Include="Kelvin.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="Presenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
