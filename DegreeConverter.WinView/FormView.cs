@@ -43,9 +43,9 @@ namespace DegreeConverter.WinView
 		}
 
         public event EventHandler<EventArgs> OK;
-        public event EventHandler<EventArgs> ToCelsius;
-        public event EventHandler<EventArgs> ToKelvin;
-        public event EventHandler<EventArgs> ToFahrenheit;
+        //public event EventHandler<EventArgs> ToCelsius;
+        //public event EventHandler<EventArgs> ToKelvin;
+        //public event EventHandler<EventArgs> ToFahrenheit;
         
         private void ChooseFrom(object sender, EventArgs e)
         {
