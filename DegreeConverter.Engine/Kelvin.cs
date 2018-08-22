@@ -2,6 +2,9 @@
 {
     public class Kelvin : IScale
     {
+        public bool IsFrom { get; set; }
+        public bool IsTo { get; set; }
+
         public string Name
         {
             get

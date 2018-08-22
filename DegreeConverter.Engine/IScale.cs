@@ -4,9 +4,11 @@ using System.Text;
 
 namespace DegreeConverter.Engine
 {
-    interface IScale
+    public interface IScale
     {
         string Name { get; set; }
+        bool IsFrom { get; set; }
+        bool IsTo { get; set; }
 
         double FromCelsius(double value);
         double ToCelsius(double value);

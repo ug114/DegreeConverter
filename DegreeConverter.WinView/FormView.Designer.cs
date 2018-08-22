@@ -59,11 +59,11 @@ namespace DegreeConverter.WinView
             // 
             this.labelResult.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelResult.AutoSize = true;
-            this.labelResult.Location = new System.Drawing.Point(146, 265);
+            this.labelResult.Location = new System.Drawing.Point(153, 265);
             this.labelResult.Name = "labelResult";
-            this.labelResult.Size = new System.Drawing.Size(62, 13);
+            this.labelResult.Size = new System.Drawing.Size(40, 13);
             this.labelResult.TabIndex = 2;
-            this.labelResult.Text = "Результат:";
+            this.labelResult.Text = "Result:";
             // 
             // inputBox
             // 
@@ -79,7 +79,7 @@ namespace DegreeConverter.WinView
             this.labelNewValue.Name = "labelNewValue";
             this.labelNewValue.Size = new System.Drawing.Size(98, 25);
             this.labelNewValue.TabIndex = 5;
-            this.labelNewValue.Text = "Новое значение:";
+            this.labelNewValue.Text = "New value:";
             this.labelNewValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBox1
@@ -99,10 +99,10 @@ namespace DegreeConverter.WinView
             this.radioButtonFromKelvin.AutoSize = true;
             this.radioButtonFromKelvin.Location = new System.Drawing.Point(188, 20);
             this.radioButtonFromKelvin.Name = "radioButtonFromKelvin";
-            this.radioButtonFromKelvin.Size = new System.Drawing.Size(73, 17);
+            this.radioButtonFromKelvin.Size = new System.Drawing.Size(54, 17);
             this.radioButtonFromKelvin.TabIndex = 2;
             this.radioButtonFromKelvin.TabStop = true;
-            this.radioButtonFromKelvin.Text = "Кельвину";
+            this.radioButtonFromKelvin.Text = "Kelvin";
             this.radioButtonFromKelvin.UseVisualStyleBackColor = true;
             // 
             // radioButtonFromFahrenheit
@@ -110,43 +110,43 @@ namespace DegreeConverter.WinView
             this.radioButtonFromFahrenheit.AutoSize = true;
             this.radioButtonFromFahrenheit.Location = new System.Drawing.Point(97, 20);
             this.radioButtonFromFahrenheit.Name = "radioButtonFromFahrenheit";
-            this.radioButtonFromFahrenheit.Size = new System.Drawing.Size(87, 17);
+            this.radioButtonFromFahrenheit.Size = new System.Drawing.Size(75, 17);
             this.radioButtonFromFahrenheit.TabIndex = 1;
             this.radioButtonFromFahrenheit.TabStop = true;
-            this.radioButtonFromFahrenheit.Text = "Фаренгейту";
+            this.radioButtonFromFahrenheit.Text = "Fahrenheit";
             this.radioButtonFromFahrenheit.UseVisualStyleBackColor = true;
             // 
             // radioButtonFromCelsius
             // 
             this.radioButtonFromCelsius.AutoSize = true;
+            this.radioButtonFromCelsius.Checked = true;
             this.radioButtonFromCelsius.Location = new System.Drawing.Point(6, 20);
             this.radioButtonFromCelsius.Name = "radioButtonFromCelsius";
-            this.radioButtonFromCelsius.Size = new System.Drawing.Size(71, 17);
+            this.radioButtonFromCelsius.Size = new System.Drawing.Size(58, 17);
             this.radioButtonFromCelsius.TabIndex = 0;
             this.radioButtonFromCelsius.TabStop = true;
-            this.radioButtonFromCelsius.Text = "Цельсию";
+            this.radioButtonFromCelsius.Text = "Celsius";
             this.radioButtonFromCelsius.UseVisualStyleBackColor = true;
-            this.radioButtonFromCelsius.Checked = true;
             // 
             // labelFrom
             // 
             this.labelFrom.AutoSize = true;
-            this.labelFrom.Location = new System.Drawing.Point(133, 68);
+            this.labelFrom.Location = new System.Drawing.Point(153, 68);
             this.labelFrom.Name = "labelFrom";
-            this.labelFrom.Size = new System.Drawing.Size(88, 13);
+            this.labelFrom.Size = new System.Drawing.Size(33, 13);
             this.labelFrom.TabIndex = 9;
-            this.labelFrom.Text = "Из градусов по:";
+            this.labelFrom.Text = "From:";
             this.labelFrom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelTo
             // 
             this.labelTo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelTo.AutoSize = true;
-            this.labelTo.Location = new System.Drawing.Point(138, 148);
+            this.labelTo.Location = new System.Drawing.Point(153, 148);
             this.labelTo.Name = "labelTo";
-            this.labelTo.Size = new System.Drawing.Size(77, 13);
+            this.labelTo.Size = new System.Drawing.Size(23, 13);
             this.labelTo.TabIndex = 10;
-            this.labelTo.Text = "В градусы по:";
+            this.labelTo.Text = "To:";
             // 
             // groupBox2
             // 
@@ -165,10 +165,10 @@ namespace DegreeConverter.WinView
             this.radioButtonToKelvin.AutoSize = true;
             this.radioButtonToKelvin.Location = new System.Drawing.Point(188, 20);
             this.radioButtonToKelvin.Name = "radioButtonToKelvin";
-            this.radioButtonToKelvin.Size = new System.Drawing.Size(73, 17);
+            this.radioButtonToKelvin.Size = new System.Drawing.Size(54, 17);
             this.radioButtonToKelvin.TabIndex = 2;
             this.radioButtonToKelvin.TabStop = true;
-            this.radioButtonToKelvin.Text = "Кельвину";
+            this.radioButtonToKelvin.Text = "Kelvin";
             this.radioButtonToKelvin.UseVisualStyleBackColor = true;
             // 
             // radioButtonToFahrenheit
@@ -176,23 +176,23 @@ namespace DegreeConverter.WinView
             this.radioButtonToFahrenheit.AutoSize = true;
             this.radioButtonToFahrenheit.Location = new System.Drawing.Point(97, 20);
             this.radioButtonToFahrenheit.Name = "radioButtonToFahrenheit";
-            this.radioButtonToFahrenheit.Size = new System.Drawing.Size(87, 17);
+            this.radioButtonToFahrenheit.Size = new System.Drawing.Size(75, 17);
             this.radioButtonToFahrenheit.TabIndex = 1;
             this.radioButtonToFahrenheit.TabStop = true;
-            this.radioButtonToFahrenheit.Text = "Фаренгейту";
+            this.radioButtonToFahrenheit.Text = "Fahrenheit";
             this.radioButtonToFahrenheit.UseVisualStyleBackColor = true;
             // 
             // radioButtonToCelsius
             // 
             this.radioButtonToCelsius.AutoSize = true;
+            this.radioButtonToCelsius.Checked = true;
             this.radioButtonToCelsius.Location = new System.Drawing.Point(6, 20);
             this.radioButtonToCelsius.Name = "radioButtonToCelsius";
-            this.radioButtonToCelsius.Size = new System.Drawing.Size(71, 17);
+            this.radioButtonToCelsius.Size = new System.Drawing.Size(58, 17);
             this.radioButtonToCelsius.TabIndex = 0;
             this.radioButtonToCelsius.TabStop = true;
-            this.radioButtonToCelsius.Text = "Цельсию";
+            this.radioButtonToCelsius.Text = "Celsius";
             this.radioButtonToCelsius.UseVisualStyleBackColor = true;
-            this.radioButtonToCelsius.Checked = true;
             // 
             // buttonOK
             // 

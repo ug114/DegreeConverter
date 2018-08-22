@@ -6,6 +6,9 @@ namespace DegreeConverter.Engine
 {
     public class Fahrenheit : IScale
     {
+        public bool IsFrom { get; set; }
+        public bool IsTo { get; set; }
+
         public string Name
         {
             get

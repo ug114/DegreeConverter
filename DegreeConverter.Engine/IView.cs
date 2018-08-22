@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace DegreeConverter.Engine
 {
@@ -7,6 +8,8 @@ namespace DegreeConverter.Engine
         bool IsFromCelsius { get; set; }
         bool IsFromKelvin { get; set; }
         bool IsFromFahrenheit { get; set; }
+
+        List<IScale> ScalesList { get; set; }
 
         void SetResult(double Degree);
 
