@@ -15,9 +15,6 @@ namespace DegreeConverter.Engine
 
         double InputDegree { get; }
 
-        //event EventHandler<EventArgs> ToCelsius;
-        //event EventHandler<EventArgs> ToKelvin;
-        //event EventHandler<EventArgs> ToFahrenheit;
         event EventHandler<EventArgs> OK;
     }
 }

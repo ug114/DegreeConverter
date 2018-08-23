@@ -43,10 +43,7 @@ namespace DegreeConverter.WinView
 		}
 
         public event EventHandler<EventArgs> OK;
-        //public event EventHandler<EventArgs> ToCelsius;
-        //public event EventHandler<EventArgs> ToKelvin;
-        //public event EventHandler<EventArgs> ToFahrenheit;
-        
+                
         private void ChooseFrom(object sender, EventArgs e)
         {
             Celsius celsius = new Celsius();
@@ -97,38 +94,6 @@ namespace DegreeConverter.WinView
                     }
                 }
             }
-            
-            //if (radioButtonFromCelsius.Checked)
-            //{
-            //    IsFromCelsius = true;
-            //    IsFromKelvin = false;
-            //    IsFromFahrenheit = false;
-            //}
-            //else if (radioButtonFromFahrenheit.Checked)
-            //{
-            //    IsFromFahrenheit = true;
-            //    IsFromCelsius = false;
-            //    IsFromKelvin = false;
-            //}
-            //else
-            //{
-            //    IsFromKelvin = true;
-            //    IsFromCelsius = false;
-            //    IsFromFahrenheit = false;
-            //}
-
-            //if (radioButtonToCelsius.Checked)
-            //{
-            //    ToCelsius(this, EventArgs.Empty);
-            //}
-            //else if (radioButtonToKelvin.Checked)
-            //{
-            //    ToKelvin(this, EventArgs.Empty);
-            //}
-            //else
-            //{
-            //    ToFahrenheit(this, EventArgs.Empty);
-            //}
         }
 
         private void buttonOK_Click(object sender, EventArgs e)
