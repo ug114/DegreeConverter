@@ -6,7 +6,7 @@ namespace DegreeConverter.Engine
 {
     public interface IScale
     {
-        string Name { get; set; }
+        string Name { get; }
         bool IsFrom { get; set; }
         bool IsTo { get; set; }
 

@@ -71,6 +71,7 @@ namespace DegreeConverter.WinView
             this.inputBox.Name = "inputBox";
             this.inputBox.Size = new System.Drawing.Size(100, 20);
             this.inputBox.TabIndex = 4;
+		    this.inputBox.Text = "0";
             // 
             // labelNewValue
             // 

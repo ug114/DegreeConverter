@@ -5,16 +5,11 @@ namespace DegreeConverter.Engine
 {
 	public interface IView
 	{
-        bool IsFromCelsius { get; set; }
-        bool IsFromKelvin { get; set; }
-        bool IsFromFahrenheit { get; set; }
-
+	    double InputDegree { get; }
         List<IScale> ScalesList { get; set; }
 
-        void SetResult(double Degree);
-
-        double InputDegree { get; }
-
+        void SetResult(double degree);
+        
         event EventHandler<EventArgs> OK;
     }
 }

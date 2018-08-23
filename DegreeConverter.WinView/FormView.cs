@@ -7,10 +7,6 @@ namespace DegreeConverter.WinView
 {
 	public partial class FormView : Form, IView
 	{
-        public bool IsFromCelsius { get; set; }
-        public bool IsFromKelvin { get; set; }
-        public bool IsFromFahrenheit { get; set; }
-
         public List<IScale> ScalesList { get; set; }
 
         public FormView()
@@ -18,9 +14,9 @@ namespace DegreeConverter.WinView
 			InitializeComponent();
 		}
 
-		public void SetResult(double Degree)
+		public void SetResult(double degree)
 		{
-			resultBox.Text = Degree.ToString("N2"); 
+			resultBox.Text = degree.ToString("N2"); 
 		}
 
 		public double InputDegree
@@ -33,7 +29,7 @@ namespace DegreeConverter.WinView
                 {
                     if (!char.IsDigit(text[i]) && text[i] != ',')
                     {
-                        MessageBox.Show("¬ведите число.");
+                        MessageBox.Show("Enter the number.");
                         throw new ArgumentException();
                     }
                 }           
