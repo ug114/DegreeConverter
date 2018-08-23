@@ -16,7 +16,15 @@ namespace DegreeConverter.Engine
 
         private void OKed(object sender, EventArgs e)
         {
-            model.SetValue(view.InputDegree, view.ScalesList);
+            try
+            {
+                model.SetValue(view.InputDegree, view.From, view.To);
+            }
+            catch (ArgumentException exception)
+            {
+                
+            }
+           
             view.SetResult(model.outputValue);
         }
     }

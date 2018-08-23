@@ -5,26 +5,38 @@ namespace DegreeConverter.Engine
 	public class Model
 	{
 		public double outputValue;
+	    public List<IScale> scalesList;
 
-        public void SetValue(double inputDegree, List<IScale> scalesList)
-        {
-            double valueInCelsius = inputDegree;
-            
-            foreach (IScale scale in scalesList)
-            {
-                if (scale.IsFrom)
-                {
-                    valueInCelsius = scale.ToCelsius(inputDegree);
-                }
-            }
+	    public void SetValue(double inputDegree, string from, string to)
+	    {
+	        double valueInCelsius = inputDegree;
 
-            foreach (IScale scale in scalesList)
-            {
-                if (scale.IsTo)
-                {
-                    outputValue = scale.FromCelsius(valueInCelsius);
-                }
-            }
-        }
-    }
+	        Celsius celsius = new Celsius();
+	        Fahrenheit fahrenheit = new Fahrenheit();
+	        Kelvin kelvin = new Kelvin();
+
+	        scalesList = new List<IScale>
+	        {
+	            celsius,
+	            fahrenheit,
+	            kelvin
+	        };
+
+	        foreach (IScale scale in scalesList)
+	        {
+	            if (scale.Name == from)
+	            {
+	                valueInCelsius = scale.ToCelsius(inputDegree);
+	            }
+	        }
+
+	        foreach (IScale scale in scalesList)
+	        {
+	            if (scale.Name == to)
+	            {
+	                outputValue = scale.FromCelsius(valueInCelsius);
+	            }
+	        }
+	    }
+	}
 }

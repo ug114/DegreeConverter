@@ -7,8 +7,9 @@ namespace DegreeConverter.WinView
 {
 	public partial class FormView : Form, IView
 	{
-        public List<IScale> ScalesList { get; set; }
-
+        public string From { get; set; }
+        public string To { get; set; }
+        
         public FormView()
 		{
 			InitializeComponent();
@@ -24,17 +25,15 @@ namespace DegreeConverter.WinView
 			get
             {
                 string text = inputBox.Text.ToString();
-                
-                for (int i = 0; i < text.Length; i++)
+                double value;
+
+                if (!Double.TryParse(text, out value))
                 {
-                    if (!char.IsDigit(text[i]) && text[i] != ',')
-                    {
-                        MessageBox.Show("Enter the number.");
-                        throw new ArgumentException();
-                    }
-                }           
-                     
-                return Convert.ToDouble(inputBox.Text);
+                    MessageBox.Show("Enter the number.");
+                    throw new ArgumentException();
+                }
+
+                return value;
             }
 		}
 
@@ -42,32 +41,13 @@ namespace DegreeConverter.WinView
                 
         private void ChooseFrom(object sender, EventArgs e)
         {
-            Celsius celsius = new Celsius();
-            Fahrenheit fahrenheit = new Fahrenheit();
-            Kelvin kelvin = new Kelvin();
-
-            ScalesList = new List<IScale>();
-            ScalesList.Add(celsius);
-            ScalesList.Add(fahrenheit);
-            ScalesList.Add(kelvin);
-
             var radioButtonsFrom = groupBox1.Controls;
 
             foreach (RadioButton radioButton in radioButtonsFrom)
             {
                 if (radioButton.Checked)
                 {
-                    foreach (IScale scale in ScalesList)
-                    {
-                        if (radioButton.Text == scale.Name)
-                        {
-                            scale.IsFrom = true;
-                        }
-                        else
-                        {
-                            scale.IsFrom = false;
-                        }
-                    }
+                    From = radioButton.Text;
                 }
             }
 
@@ -77,17 +57,7 @@ namespace DegreeConverter.WinView
             {
                 if (radioButton.Checked)
                 {
-                    foreach (IScale scale in ScalesList)
-                    {
-                        if (radioButton.Text == scale.Name)
-                        {
-                            scale.IsTo = true;
-                        }
-                        else
-                        {
-                            scale.IsTo = false;
-                        }
-                    }
+                    To = radioButton.Text;
                 }
             }
         }

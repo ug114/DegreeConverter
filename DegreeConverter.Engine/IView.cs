@@ -5,9 +5,10 @@ namespace DegreeConverter.Engine
 {
 	public interface IView
 	{
+        string From { get; set; }
+        string To { get; set; }
 	    double InputDegree { get; }
-        List<IScale> ScalesList { get; set; }
-
+        
         void SetResult(double degree);
         
         event EventHandler<EventArgs> OK;

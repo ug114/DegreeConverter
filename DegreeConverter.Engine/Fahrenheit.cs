@@ -6,18 +6,8 @@ namespace DegreeConverter.Engine
 {
     public class Fahrenheit : IScale
     {
-        public bool IsFrom { get; set; }
-        public bool IsTo { get; set; }
-
-        public string Name
-        {
-            get
-            {
-                return "Fahrenheit";
-            }
-            set { }
-        }
-
+        public string Name => "Fahrenheit";
+       
         public double FromCelsius(double value)
         {
             return value *9 / 5 + 32;

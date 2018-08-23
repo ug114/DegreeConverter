@@ -2,18 +2,8 @@
 {
     public class Kelvin : IScale
     {
-        public bool IsFrom { get; set; }
-        public bool IsTo { get; set; }
-
-        public string Name
-        {
-            get
-            {
-                return "Kelvin";
-            }
-            set { }
-        }
-
+        public string Name => "Kelvin";
+       
         public double FromCelsius(double value)
         {
             return value + 273.15;
