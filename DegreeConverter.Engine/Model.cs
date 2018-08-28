@@ -14,27 +14,11 @@ namespace DegreeConverter.Engine
             new Fahrenheit(),
             new Kelvin()
 	    };
-        
+
 	    public void SetValue(double inputDegree, string fromScale, string toScale)
 	    {
 	        var valueInCelsius = scalesList.First(scale => scale.Name == fromScale).ToCelsius(inputDegree);
-            outputValue = scalesList.First(scale => scale.Name == toScale).FromCelsius(valueInCelsius);
-
-            //   foreach (var scale in scalesList)
-            //{
-            //    if (scale.Name == fromScale)
-            //    {
-            //        valueInCelsius = scale.ToCelsius(inputDegree);
-            //    }
-            //}
-
-            //foreach (var scale in scalesList)
-            //{
-            //    if (scale.Name == toScale)
-            //    {
-            //        outputValue = scale.FromCelsius(valueInCelsius);
-            //    }
-            //}
-        }
+	        outputValue = scalesList.First(scale => scale.Name == toScale).FromCelsius(valueInCelsius);
+	    }
 	}
 }

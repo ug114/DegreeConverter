@@ -10,11 +10,11 @@ namespace DegreeConverter.Engine
         public Presenter(IView view)
         {
             this.view = view;
-            this.view.OK += new EventHandler<EventArgs>(OKclicked);
+            this.view.OK += new EventHandler<EventArgs>(OkClicked);
             view.SetResult(model.outputValue);
         }
 
-        private void OKclicked(object sender, EventArgs e)
+        private void OkClicked(object sender, EventArgs e)
         {
             try
             {
