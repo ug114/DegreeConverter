@@ -4,25 +4,25 @@ namespace DegreeConverter.Engine
 {
 	public class Presenter
 	{
-		private Model model = new Model();
-		private IView view;
+		private readonly Model model = new Model();
+		private readonly IView view;
 
         public Presenter(IView view)
         {
             this.view = view;
-            this.view.OK += new EventHandler<EventArgs>(OKed);
+            this.view.OK += new EventHandler<EventArgs>(OKclicked);
             view.SetResult(model.outputValue);
         }
 
-        private void OKed(object sender, EventArgs e)
+        private void OKclicked(object sender, EventArgs e)
         {
             try
             {
                 model.SetValue(view.InputDegree, view.From, view.To);
             }
-            catch (ArgumentException exception)
+            catch (ArgumentException)
             {
-                
+                return;
             }
            
             view.SetResult(model.outputValue);

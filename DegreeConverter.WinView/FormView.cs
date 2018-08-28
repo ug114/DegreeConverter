@@ -1,11 +1,10 @@
 using System;
 using System.Windows.Forms;
 using DegreeConverter.Engine;
-using System.Collections.Generic;
 
 namespace DegreeConverter.WinView
 {
-	public partial class FormView : Form, IView
+    public partial class FormView : Form, IView
 	{
         public string From { get; set; }
         public string To { get; set; }
@@ -24,12 +23,11 @@ namespace DegreeConverter.WinView
 		{
 			get
             {
-                string text = inputBox.Text.ToString();
-                double value;
+                var text = inputBox.Text.ToString();
 
-                if (!Double.TryParse(text, out value))
+                if (!Double.TryParse(text, out var value))
                 {
-                    MessageBox.Show("Enter the number.");
+                    MessageBox.Show(@"Enter the number.");
                     throw new ArgumentException();
                 }
 

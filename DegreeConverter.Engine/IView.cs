@@ -1,9 +1,8 @@
 using System;
-using System.Collections.Generic;
 
 namespace DegreeConverter.Engine
 {
-	public interface IView
+    public interface IView
 	{
         string From { get; set; }
         string To { get; set; }

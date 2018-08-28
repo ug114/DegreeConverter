@@ -1,4 +1,4 @@
-﻿namespace DegreeConverter.Engine
+﻿namespace DegreeConverter.Engine.Scales
 {
     public class Kelvin : IScale
     {

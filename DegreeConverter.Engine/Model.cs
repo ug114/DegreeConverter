@@ -1,42 +1,40 @@
 using System.Collections.Generic;
+using DegreeConverter.Engine.Scales;
+using System.Linq;
+using System.Runtime.InteropServices;
 
 namespace DegreeConverter.Engine
 {
 	public class Model
 	{
 		public double outputValue;
-	    public List<IScale> scalesList;
-
-	    public void SetValue(double inputDegree, string from, string to)
+	    public readonly List<IScale> scalesList = new List<IScale>()
 	    {
-	        double valueInCelsius = inputDegree;
+            new Celsius(),
+            new Fahrenheit(),
+            new Kelvin()
+	    };
+        
+	    public void SetValue(double inputDegree, string fromScale, string toScale)
+	    {
+	        var valueInCelsius = scalesList.First(scale => scale.Name == fromScale).ToCelsius(inputDegree);
+            outputValue = scalesList.First(scale => scale.Name == toScale).FromCelsius(valueInCelsius);
 
-	        Celsius celsius = new Celsius();
-	        Fahrenheit fahrenheit = new Fahrenheit();
-	        Kelvin kelvin = new Kelvin();
+            //   foreach (var scale in scalesList)
+            //{
+            //    if (scale.Name == fromScale)
+            //    {
+            //        valueInCelsius = scale.ToCelsius(inputDegree);
+            //    }
+            //}
 
-	        scalesList = new List<IScale>
-	        {
-	            celsius,
-	            fahrenheit,
-	            kelvin
-	        };
-
-	        foreach (IScale scale in scalesList)
-	        {
-	            if (scale.Name == from)
-	            {
-	                valueInCelsius = scale.ToCelsius(inputDegree);
-	            }
-	        }
-
-	        foreach (IScale scale in scalesList)
-	        {
-	            if (scale.Name == to)
-	            {
-	                outputValue = scale.FromCelsius(valueInCelsius);
-	            }
-	        }
-	    }
+            //foreach (var scale in scalesList)
+            //{
+            //    if (scale.Name == toScale)
+            //    {
+            //        outputValue = scale.FromCelsius(valueInCelsius);
+            //    }
+            //}
+        }
 	}
 }

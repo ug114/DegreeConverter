@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DegreeConverter.Engine
+﻿namespace DegreeConverter.Engine.Scales
 {
     public class Celsius : IScale
     {
