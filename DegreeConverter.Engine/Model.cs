@@ -7,8 +7,8 @@ namespace DegreeConverter.Engine
 {
 	public class Model
 	{
-		public double outputValue;
-	    public readonly List<IScale> scalesList = new List<IScale>()
+		public double OutputValue;
+	    private readonly List<IScale> _scalesList = new List<IScale>()
 	    {
             new Celsius(),
             new Fahrenheit(),
@@ -17,8 +17,8 @@ namespace DegreeConverter.Engine
 
 	    public void SetValue(double inputDegree, string fromScale, string toScale)
 	    {
-	        var valueInCelsius = scalesList.First(scale => scale.Name == fromScale).ToCelsius(inputDegree);
-	        outputValue = scalesList.First(scale => scale.Name == toScale).FromCelsius(valueInCelsius);
+	        var valueInCelsius = _scalesList.First(scale => scale.Name == fromScale).ToCelsius(inputDegree);
+	        OutputValue = _scalesList.First(scale => scale.Name == toScale).FromCelsius(valueInCelsius);
 	    }
 	}
 }

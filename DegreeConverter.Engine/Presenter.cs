@@ -4,28 +4,28 @@ namespace DegreeConverter.Engine
 {
 	public class Presenter
 	{
-		private readonly Model model = new Model();
-		private readonly IView view;
+		private readonly Model _model = new Model();
+		private readonly IView _view;
 
         public Presenter(IView view)
         {
-            this.view = view;
-            this.view.OK += new EventHandler<EventArgs>(OkClicked);
-            view.SetResult(model.outputValue);
+            _view = view;
+            _view.OK += new EventHandler<EventArgs>(OkClicked);
+            view.SetResult(_model.OutputValue);
         }
 
         private void OkClicked(object sender, EventArgs e)
         {
             try
             {
-                model.SetValue(view.InputDegree, view.From, view.To);
+                _model.SetValue(_view.InputDegree, _view.From, _view.To);
             }
             catch (ArgumentException)
             {
                 return;
             }
            
-            view.SetResult(model.outputValue);
+            _view.SetResult(_model.OutputValue);
         }
     }
 }
